@@ -1,0 +1,96 @@
+/* ---------- SubTrack main styles ---------- */
+
+:root {
+  --primary: #1d6fd8;
+  --primary-dark: #14529f;
+  --light-blue: #eaf3ff;
+  --text-dark: #1f2d3d;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: var(--text-dark);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary) !important;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--light-blue) 0%, #ffffff 100%);
+  padding: 90px 0 70px;
+}
+.hero h1 {
+  font-weight: 800;
+  font-size: 2.8rem;
+}
+.hero h1 span {
+  color: var(--primary);
+}
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.section-subtitle {
+  color: #6b7a8c;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  border: 1px solid #e3ebf5;
+  border-radius: 14px;
+  padding: 26px 22px;
+  height: 100%;
+  background: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(29, 111, 216, 0.12);
+}
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.steps-section {
+  background: var(--light-blue);
+}
+.step-number {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 auto 12px;
+}
+
+.site-footer {
+  background: #14294a;
+  color: #cfd9e8;
+  padding: 28px 0;
+  font-size: 0.9rem;
+}

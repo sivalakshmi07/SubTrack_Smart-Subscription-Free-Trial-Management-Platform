@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register – SubTrack</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body class="auth-page">
+
+  <div class="container-fluid">
+    <div class="row min-vh-100">
+
+      <!-- LEFT GREEN PANEL (hidden on small screens) -->
+      <div class="col-lg-5 auth-side d-none d-lg-flex">
+        <a href="/"><img src="/images/logo-full-white.svg" alt="SubTrack" height="48"></a>
+        <h2>Take control of your subscriptions</h2>
+        <p>One place for every plan, trial and renewal date.</p>
+        <ul class="auth-points">
+          <li>Track free trials before they turn into payments</li>
+          <li>Get reminders before every renewal</li>
+          <li>See your monthly and yearly spending</li>
+          <li>Find subscriptions you no longer use</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="col-lg-7 d-flex align-items-center justify-content-center auth-main">
+        <div class="auth-card">
+
+          <div class="text-center d-lg-none mb-4">
+            <a href="/"><img src="/images/logo-full.svg" alt="SubTrack" height="44"></a>
+          </div>
+
+          <h1 class="auth-title">Create your account</h1>
+          <p class="auth-subtitle">Start managing your subscriptions in minutes.</p>
+
+          <div id="formMessage" class="alert d-none" role="alert"></div>
+
+          <form id="registerForm" novalidate>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Full name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" autocomplete="name">
+              <div class="field-error" id="nameError"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+              <div class="field-error" id="emailError"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password">
+                <button class="btn btn-outline-secondary toggle-password" type="button" data-target="password">Show</button>
+              </div>
+              <div class="strength mt-2"><div class="strength-bar" id="strengthBar"></div></div>
+              <div class="strength-text" id="strengthText">Use 8+ characters with letters and numbers.</div>
+              <div class="field-error" id="passwordError"></div>
+            </div>
+
+            <div class="mb-4">
+              <label for="confirmPassword" class="form-label">Confirm password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password">
+                <button class="btn btn-outline-secondary toggle-password" type="button" data-target="confirmPassword">Show</button>
+              </div>
+              <div class="field-error" id="confirmPasswordError"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2">Create account</button>
+          </form>
+
+          <p class="text-center mt-4 mb-1">Already have an account? <a href="/login.html" class="auth-link">Login</a></p>
+          <p class="text-center mb-0"><a href="/" class="auth-link small">&larr; Back to home</a></p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/js/register.js"></script>
+</body>
+</html>

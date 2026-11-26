@@ -1,80 +1,99 @@
-/* ---------- SubTrack main styles ---------- */
+/* ---------- SubTrack main styles (green theme) ---------- */
 
 :root {
-  --primary: #1d6fd8;
-  --primary-dark: #14529f;
-  --light-blue: #eaf3ff;
-  --text-dark: #1f2d3d;
+  --primary: #4a762a;        /* logo green */
+  --primary-dark: #223014;   /* logo dark green */
+  --green-100: #f6faf2;      /* page background: green mixed with white */
+  --green-200: #e9f2e0;      /* soft sections */
+  --green-300: #dbe8cf;      /* borders */
+  --text-dark: #1f2d1a;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Arial, sans-serif;
   color: var(--text-dark);
+  background-color: var(--green-100);
 }
 
-.navbar-brand {
-  font-weight: 700;
-  color: var(--primary) !important;
-  letter-spacing: 0.5px;
+/* Navbar stays white so the logo background blends in */
+.navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid var(--green-300) !important;
+}
+.navbar .nav-link {
+  color: var(--text-dark);
+}
+.navbar .nav-link:hover {
+  color: var(--primary);
 }
 
+/* Buttons */
 .btn-primary {
-  background-color: var(--primary);
-  border-color: var(--primary);
-}
-.btn-primary:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
+  --bs-btn-bg: var(--primary);
+  --bs-btn-border-color: var(--primary);
+  --bs-btn-hover-bg: var(--primary-dark);
+  --bs-btn-hover-border-color: var(--primary-dark);
+  --bs-btn-active-bg: var(--primary-dark);
+  --bs-btn-active-border-color: var(--primary-dark);
+  --bs-btn-focus-shadow-rgb: 74, 118, 42;
 }
 .btn-outline-primary {
-  color: var(--primary);
-  border-color: var(--primary);
-}
-.btn-outline-primary:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
+  --bs-btn-color: var(--primary);
+  --bs-btn-border-color: var(--primary);
+  --bs-btn-hover-bg: var(--primary);
+  --bs-btn-hover-border-color: var(--primary);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-active-bg: var(--primary-dark);
+  --bs-btn-active-border-color: var(--primary-dark);
+  --bs-btn-focus-shadow-rgb: 74, 118, 42;
 }
 
+/* Hero section */
 .hero {
-  background: linear-gradient(135deg, var(--light-blue) 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--green-200) 0%, var(--green-100) 100%);
   padding: 90px 0 70px;
 }
 .hero h1 {
   font-weight: 800;
   font-size: 2.8rem;
+  color: var(--primary-dark);
 }
 .hero h1 span {
   color: var(--primary);
 }
 
+/* Section titles */
 .section-title {
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--primary-dark);
 }
 .section-subtitle {
-  color: #6b7a8c;
+  color: #5f7355;
   margin-bottom: 40px;
 }
 
+/* Feature cards */
 .feature-card {
-  border: 1px solid #e3ebf5;
+  border: 1px solid var(--green-300);
   border-radius: 14px;
   padding: 26px 22px;
   height: 100%;
-  background: #fff;
+  background: #ffffff;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(29, 111, 216, 0.12);
+  box-shadow: 0 8px 22px rgba(74, 118, 42, 0.15);
 }
 .feature-icon {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
+/* How it works */
 .steps-section {
-  background: var(--light-blue);
+  background: var(--green-200);
 }
 .step-number {
   width: 48px;
@@ -82,15 +101,138 @@ body {
   line-height: 48px;
   border-radius: 50%;
   background: var(--primary);
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   font-size: 1.2rem;
   margin: 0 auto 12px;
 }
 
+/* Footer */
 .site-footer {
-  background: #14294a;
-  color: #cfd9e8;
+  background: var(--primary-dark);
+  color: #d5e3c8;
   padding: 28px 0;
   font-size: 0.9rem;
+}
+
+/* ---------- Auth pages (register / login) ---------- */
+
+.auth-page {
+  background-color: var(--green-100);
+}
+
+/* Left green panel */
+.auth-side {
+  background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 50px;
+}
+.auth-side h2 {
+  font-weight: 800;
+  font-size: 2rem;
+  margin-top: 40px;
+}
+.auth-side p {
+  color: #d5e3c8;
+}
+.auth-points {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+}
+.auth-points li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 14px;
+  color: #eef5e6;
+}
+.auth-points li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 0.8rem;
+}
+
+/* Form side */
+.auth-main {
+  padding: 40px 16px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border: 1px solid var(--green-300);
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 30px rgba(34, 48, 20, 0.08);
+}
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+.auth-subtitle {
+  color: #5f7355;
+  margin-bottom: 24px;
+}
+.auth-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Form controls in green */
+.form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+}
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(74, 118, 42, 0.2);
+}
+.form-control.is-invalid {
+  border-color: #dc3545;
+  background-image: none;
+}
+.field-error {
+  color: #dc3545;
+  font-size: 0.82rem;
+  margin-top: 4px;
+  min-height: 0;
+}
+.toggle-password {
+  min-width: 64px;
+}
+
+/* Password strength meter */
+.strength {
+  height: 6px;
+  background: var(--green-200);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.strength-bar {
+  height: 100%;
+  width: 0;
+  transition: width 0.25s, background-color 0.25s;
+}
+.strength-text {
+  font-size: 0.8rem;
+  color: #5f7355;
+  margin-top: 4px;
 }
